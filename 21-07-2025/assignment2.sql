@@ -1,5 +1,6 @@
 create database students_db;
 use students_db;
+
 CREATE TABLE students (
 student_id INT PRIMARY KEY,
 name VARCHAR(100),
@@ -46,6 +47,7 @@ FROM students;
 SELECT name
 FROM students
 WHERE gender = 'Female';
+
 SELECT c.course_name
 FROM courses c
 JOIN departments d ON c.department_id = d.department_id
@@ -91,10 +93,12 @@ LIMIT 1;
 SELECT name
 FROM students
 WHERE age > (SELECT AVG(age) FROM students);
+
 SELECT DISTINCT d.department_name
 FROM departments d
 JOIN courses c ON d.department_id = c.department_id
 WHERE c.credit_hours > 3;
+
 SELECT s.name
 FROM students s
 WHERE s.department_id = (
@@ -104,6 +108,7 @@ WHERE s.department_id = (
     ORDER BY COUNT(course_id)
     LIMIT 1
 );
+
 SELECT s.name
 FROM students s
 JOIN departments d ON s.department_id = d.department_id
@@ -121,6 +126,7 @@ WHERE age = (
     FROM students
     WHERE age < (SELECT MAX(age) FROM students)
 );
+
 SELECT c.course_name
 FROM courses c
 WHERE c.department_id IN (
