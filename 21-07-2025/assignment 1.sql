@@ -8,17 +8,20 @@ department VARCHAR(50),
 salary INT,
 age INT
 );
+
 CREATE TABLE departments (
 dept_id INT PRIMARY KEY,
 dept_name VARCHAR(50),
 location VARCHAR(50)
 );
+
 INSERT INTO employees VALUES
 (101, 'Amit Sharma', 'Engineering', 60000, 30),
 (102, 'Neha Reddy', 'Marketing', 45000, 28),
 (103, 'Faizan Ali', 'Engineering', 58000, 32),
 (104, 'Divya Mehta', 'HR', 40000, 29),
 (105, 'Ravi Verma', 'Sales', 35000, 26);
+
 INSERT INTO departments VALUES
 (1, 'Engineering', 'Bangalore'),
 (2, 'Marketing', 'Mumbai'),
