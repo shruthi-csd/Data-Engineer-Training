@@ -1,5 +1,6 @@
 create database books_db;
 use books_db;
+
 CREATE TABLE books (
     book_id INT PRIMARY KEY,
     title VARCHAR(100),
