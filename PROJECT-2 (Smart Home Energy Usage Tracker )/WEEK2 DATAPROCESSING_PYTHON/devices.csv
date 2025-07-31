@@ -1,0 +1,4 @@
+device_id,name,room_id,status
+1,"Smart Lamp",1,active
+2,"Air Purifier",2,inactive
+3,"Water Heater",3,active
