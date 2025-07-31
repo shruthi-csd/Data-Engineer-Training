@@ -1,0 +1,11 @@
+expense_id,user_id,category_id,amount,expense_date,description
+1,1,1,950.00,2025-07-02,"Doctor consultation and medicines"
+2,1,2,2000.00,2025-07-04,"Online course fee"
+3,2,3,7000.00,2025-07-06,"July month rent"
+4,3,4,450.00,2025-07-09,"Movie tickets"
+5,4,5,3000.00,2025-07-11,"Weekend trip"
+6,5,1,600.00,2025-07-12,"Pharmacy purchase"
+7,2,5,1250.00,2025-07-13,"Cab and hotel for client visit"
+8,3,2,1800.00,2025-07-16,"Textbooks and materials"
+9,4,3,7200.00,2025-07-19,"Shared apartment rent"
+10,5,4,520.00,2025-07-21,"Stand-up comedy show"
