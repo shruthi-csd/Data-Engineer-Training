@@ -1,0 +1,36 @@
+trigger: none   # No trigger on code push
+schedules:
+  - cron: "0 0 1 * *"   # Run at midnight on the 1st of every month
+    displayName: "Monthly Expense Analysis"
+    branches:
+      include:
+        - main
+    always: true
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  # 1. Setup Python
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.10'
+      addToPath: true
+
+  # 2. Install dependencies
+  - script: |
+      python -m pip install --upgrade pip
+      pip install pandas
+    displayName: "Install Python dependencies"
+
+  # 3. Run analysis script
+  - script: |
+      python scripts/expense_analysis.py
+    displayName: "Run Expense Analysis"
+
+  # 4. Publish CSV Report as Pipeline Artifact
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "output/"
+      ArtifactName: "MonthlyExpenseReport"
+      publishLocation: "Container"

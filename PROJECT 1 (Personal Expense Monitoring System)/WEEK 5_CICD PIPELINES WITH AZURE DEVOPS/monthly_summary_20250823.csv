@@ -1,0 +1,6 @@
+user_id,year_month,total_spend,name,email,savings,alert
+1,2025-07,2950.0,Karthik,karthik2025@mail.com,7050.0,OK
+2,2025-07,8250.0,Sneha,sneha.raju@email.com,1750.0, High Spend
+3,2025-07,2250.0,Vikram,vikram_nair@domain.com,7750.0,OK
+4,2025-07,10200.0,Pooja,pooja.star95@example.com,-200.0, High Spend
+5,2025-07,1120.0,Tejas,tejas.mani@gmail.com,8880.0,OK
