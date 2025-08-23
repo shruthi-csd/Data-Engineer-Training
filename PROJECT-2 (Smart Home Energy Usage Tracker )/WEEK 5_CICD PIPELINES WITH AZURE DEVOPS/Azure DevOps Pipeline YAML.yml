@@ -1,0 +1,44 @@
+trigger:
+  branches:
+    include:
+      - main   # Run on main branch updates
+
+schedules:
+  - cron: "0 0 * * 0"   # Weekly (Sunday 00:00 UTC)
+    displayName: "Weekly Energy Report Job"
+    branches:
+      include:
+        - main
+    always: true
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  # Step 1: Checkout repository
+  - task: Checkout@1
+    displayName: "Checkout repo"
+
+  # Step 2: Setup Python
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.10'
+    displayName: "Set up Python"
+
+  # Step 3: Install dependencies
+  - script: |
+      pip install pyspark pandas
+    displayName: "Install dependencies"
+
+  # Step 4: Run ETL script
+  - script: |
+      python energy_report.py
+    displayName: "Run Energy Report ETL"
+
+  # Step 5: Publish Report Artifact
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: "reports/"
+      ArtifactName: "EnergyReports"
+      publishLocation: "Container"
+    displayName: "Publish Energy Report CSVs"

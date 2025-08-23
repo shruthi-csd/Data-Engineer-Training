@@ -1,0 +1,4 @@
+device_id,date,energy_kwh,name_x,room_id,status,name_y
+1,2025-07-22,0.55,Smart Lamp,1,active,Study Room
+2,2025-07-22,1.8,Air Purifier,2,inactive,Guest Room
+3,2025-07-22,2.25,Water Heater,3,active,Bathroom
