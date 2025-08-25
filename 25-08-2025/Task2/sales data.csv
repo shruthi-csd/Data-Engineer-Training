@@ -1,0 +1,7 @@
+order_id,region,revenue,cost
+1001,East,120000,80000
+1002,West,,40000
+1003,North,75000,50000
+1003,North,75000,50000   # duplicate row
+1004,,30000,20000
+1005,South,,15000
